@@ -9,7 +9,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/smoketurner/serverless-vpc-plugin"
+    "url": "git+https://github.com/smoketurner/serverless-vpc-plugin.git"
   },
   "keywords": [
     "serverless",
@@ -40,5 +40,12 @@
     "nock": "13.1.0",
     "prettier": "2.3.2",
     "serverless": "2.50.0"
+  },
+  "bugs": {
+    "url": "https://github.com/smoketurner/serverless-vpc-plugin/issues"
+  },
+  "homepage": "https://github.com/smoketurner/serverless-vpc-plugin#readme",
+  "directories": {
+    "example": "example"
   }
 }

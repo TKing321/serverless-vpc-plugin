@@ -2,7 +2,6 @@
  * Build a VPC
  *
  * @param {String} CidrBlock
- * @param {Object} params
  * @return {Object}
  */
 function buildVpc(CidrBlock = '10.0.0.0/16') {
@@ -81,6 +80,13 @@ function buildAppSecurityGroup(prefixLists = null) {
       ToPort: 443,
       CidrIp: '0.0.0.0/0',
     },
+    {
+      Description: 'Permit VPC to VGS communication',
+      IpProtocol: 'tcp',
+      FromPort: 8080,
+      ToPort: 8080,
+      CidrIp: '0.0.0.0/0',
+    },
   ];
   if (prefixLists) {
     egress.push({
@@ -130,6 +136,13 @@ function buildAppSecurityGroup(prefixLists = null) {
             IpProtocol: 'tcp',
             FromPort: 443,
             ToPort: 443,
+            CidrIp: '0.0.0.0/0',
+          },
+          {
+            Description: 'Permit VPC to VGS communication',
+            IpProtocol: 'tcp',
+            FromPort: 8080,
+            ToPort: 8080,
             CidrIp: '0.0.0.0/0',
           },
         ],
